@@ -1,0 +1,28 @@
+{%extends './partials/base.html'%}
+{%block title%}
+{%endblock%}
+{%block content%}
+<div class="container">
+    <div class="row">
+        <div class="col-6 offset-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <div class="card-body">
+                        Delete Task
+                    </div>
+                    <div class="alert alert-danger">
+                        <p>Are you sure you want to delete</p>
+                        <form method="POST">
+                            {% csrf_token %}
+                            <input class="btn btn-danger" type="submit" value="Yes">
+                            <a class="btn btn-secondary" href="{%url 'taskapp-index' %}">No</a>
+                        </form>
+                        
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+{%endblock%}
